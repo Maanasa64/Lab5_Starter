@@ -2,5 +2,6 @@
 
 ## Team Members
 
-- Linda Wu
-- Maanasa Prasad
+Linda Wu
+
+Maanasa Prasad
