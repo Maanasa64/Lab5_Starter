@@ -1,4 +1,6 @@
 # Lab 5 - Starter
 
-Linda Wu
-Maanasa Prasad
+## Team Members
+
+- Linda Wu
+- Maanasa Prasad
