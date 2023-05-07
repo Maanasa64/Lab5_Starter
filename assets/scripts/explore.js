@@ -7,6 +7,7 @@ let speech = window.speechSynthesis;
 function init() {
   let explore = document.querySelector("#explore");
   const voice = explore.querySelector("#voice-select");
+  console.log(voice.value);
   const Btn = explore.querySelector("button");
   const sentence = explore.querySelector("#text-to-speak");
   const smiley = explore.querySelector("img");
@@ -52,4 +53,3 @@ function init() {
     sentence.blur();
   });
 }
-
