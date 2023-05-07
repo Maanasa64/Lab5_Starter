@@ -16,7 +16,7 @@ function init() {
   function fillVoices() {
     voices = speech.getVoices();
     for (let i = 0; i < voices.length; i++) {
-      const choices = document.createElement("choices");
+      const choices = document.createElement("option");
       choices.textContent = `${voices[i].name} (${voices[i].lang})`;
       if (voices[i].default) {
         choices.textContent += " — DEFAULT";
@@ -36,7 +36,7 @@ function init() {
   }
 
   Btn.addEventListener("click", (event) => {
-    const say = new SpeechSynthesisUtterance(inputText.value);
+    const say = new SpeechSynthesisUtterance(sentence.value);
     const choice_made =
       voice.choice_made[0].getAttribute("data-name");
     for (let i = 0; i < voices.length; i++) {
