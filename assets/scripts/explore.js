@@ -7,7 +7,6 @@ let speech = window.speechSynthesis;
 function init() {
   let explore = document.querySelector("#explore");
   const voice = explore.querySelector("#voice-select");
-  console.log(voice.value);
   const Btn = explore.querySelector("button");
   const sentence = explore.querySelector("#text-to-speak");
   const smiley = explore.querySelector("img");
@@ -16,14 +15,14 @@ function init() {
   function fillVoices() {
     voices = speech.getVoices();
     for (let i = 0; i < voices.length; i++) {
-      const choices = document.createElement("option");
-      choices.textContent = `${voices[i].name} (${voices[i].lang})`;
+      const option = document.createElement("option");
+      option.textContent = `${voices[i].name} (${voices[i].lang})`;
       if (voices[i].default) {
-        choices.textContent += " — DEFAULT";
+        option.textContent += " — DEFAULT";
       }
-      choises.setAttribute("data-lang", voices[i].lang);
-      choises.setAttribute("data-name", voices[i].name);
-      voice.appendChild(choices);
+      option.setAttribute("data-lang", voices[i].lang);
+      option.setAttribute("data-name", voices[i].name);
+      voice.appendChild(option);
     }
   }
 
@@ -38,7 +37,7 @@ function init() {
   Btn.addEventListener("click", (event) => {
     const say = new SpeechSynthesisUtterance(sentence.value);
     const choice_made =
-      voice.choice_made[0].getAttribute("data-name");
+      voice.selectedOptions[0].getAttribute("data-name");
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === choice_made) {
         say.voice = voices[i];
@@ -53,3 +52,4 @@ function init() {
     sentence.blur();
   });
 }
+
