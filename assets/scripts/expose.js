@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-
+  const jsConfetti = new JSConfetti();
   var hornSelect = document.getElementById("horn-select");
   var image = document.querySelector("img");
   var audio = document.querySelector("audio");
@@ -14,7 +14,7 @@ function init() {
   playButton.addEventListener("click", function() {
     audio.play();
     if (hornSelect.value === "party-horn") {
-      const jsConfetti = new JSConfetti();
+      
       jsConfetti.addConfetti();
     }
   })
